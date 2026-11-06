@@ -1,0 +1,136 @@
+
+/* ==========================================
+   XBOX SERIES X — BLACK & PURPLE NEON
+   Tema para Gamepad Viewer
+   ========================================== */
+
+:root {
+    --controller-black: #101014;
+    --controller-dark: #19151f;
+    --controller-purple: #812cff;
+    --controller-purple-light: #b56aff;
+    --controller-glow: rgba(137, 43, 255, 0.75);
+    --controller-border: #5920a5;
+    --button-text: #f5edff;
+}
+
+/* Corpo do controle */
+.controller,
+.controller.xbox {
+    background-color: var(--controller-black) !important;
+    border-color: var(--controller-border) !important;
+    filter: drop-shadow(0 0 8px var(--controller-glow));
+}
+
+/* Carcaça e áreas internas */
+.controller .face,
+.controller .body,
+.controller .front {
+    background-color: var(--controller-dark) !important;
+    border-color: var(--controller-purple) !important;
+}
+
+/* Botões principais */
+.controller .button,
+.controller .face .button {
+    background: linear-gradient(
+        145deg,
+        #30203f,
+        #17121f
+    ) !important;
+
+    border: 1px solid var(--controller-purple) !important;
+    color: var(--button-text) !important;
+    box-shadow: 0 0 4px rgba(137, 43, 255, 0.35);
+}
+
+/* ABXY */
+.controller .a,
+.controller .b,
+.controller .x,
+.controller .y {
+    background-color: #241432 !important;
+    border-color: var(--controller-purple-light) !important;
+    color: #ffffff !important;
+}
+
+/* Botões pressionados */
+.controller .button.pressed,
+.controller .pressed {
+    background: var(--controller-purple) !important;
+    border-color: #d7b5ff !important;
+    color: #ffffff !important;
+
+    box-shadow:
+        0 0 7px var(--controller-purple),
+        0 0 18px var(--controller-glow) !important;
+}
+
+/* Analógicos */
+.controller .stick,
+.controller .stick-ring {
+    background-color: #21182c !important;
+    border-color: var(--controller-purple) !important;
+}
+
+.controller .stick.pressed {
+    background-color: var(--controller-purple) !important;
+    box-shadow: 0 0 12px var(--controller-glow);
+}
+
+/* Direcional (D-Pad) */
+.controller .arrows,
+.controller .dpad {
+    background-color: #17121f !important;
+    border-color: var(--controller-purple) !important;
+}
+
+.controller .arrows.pressed,
+.controller .dpad.pressed {
+    background-color: var(--controller-purple) !important;
+    box-shadow: 0 0 12px var(--controller-glow);
+}
+
+/* LB / RB */
+.controller .bumper {
+    background-color: #251832 !important;
+    border-color: var(--controller-purple) !important;
+}
+
+.controller .bumper.pressed {
+    background-color: var(--controller-purple) !important;
+    box-shadow: 0 0 10px var(--controller-glow);
+}
+
+/* LT / RT */
+.controller .trigger {
+    background-color: #1b1424 !important;
+    border-color: var(--controller-purple) !important;
+}
+
+.controller .trigger.pressed {
+    background-color: var(--controller-purple) !important;
+    box-shadow: 0 0 14px var(--controller-glow);
+}
+
+/* View / Menu / Guide */
+.controller .start,
+.controller .back,
+.controller .home,
+.controller .guide {
+    background-color: #21152f !important;
+    border-color: var(--controller-purple) !important;
+    color: #ffffff !important;
+}
+
+/* Detalhes e contornos */
+.controller svg,
+.controller path {
+    stroke: var(--controller-purple);
+}
+
+/* Fundo transparente para OBS */
+html,
+body {
+    background: transparent !important;
+}
