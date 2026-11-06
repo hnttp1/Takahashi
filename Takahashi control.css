@@ -3,7 +3,7 @@
  * Input Overlay skin: left stick + LT brake + RT throttle only.
  * Canvas: compact 520 x 190. Uses the shared control engine for live input.
  */
-@import url("../_shared/controls.css");
+@import url("./_shared/controls.css");
 
 .controller.pure {
     width: 520px;
