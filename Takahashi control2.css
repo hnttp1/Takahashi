@@ -1,17 +1,15 @@
-/* Estilização Base para o Controle Customizado Takahashi JDM Style */
+/* EstilizaÃ§Ã£o Customizada Takahashi JDM Style - Base Branca e Vermelha */
 :root {
   --main-bg: #0d0d0d;
-  --accent-red: #e60012;
-  --glow-red: rgba(230, 0, 18, 0.65);
-  --text-white: #ffffff;
-  --panel-bg: rgba(20, 20, 20, 0.85);
-  --border-color: #333333;
+  --shell-white: #f5f5f7;
+  --accent-red: #cc181e;
+  --glow-red: rgba(204, 24, 30, 0.5);
+  --btn-dark: #1e1e1e;
+  --btn-border: #444444;
 }
 
 body {
   background-color: var(--main-bg);
-  color: var(--text-white);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 20px;
   display: flex;
@@ -20,142 +18,120 @@ body {
   min-height: 100vh;
 }
 
-/* Container do Controle */
+/* Corpo Principal do Controle (Cor Branca Predominante) */
 .controller-shell {
   position: relative;
   width: 800px;
   height: 540px;
-  background-color: #f5f5f5;
-  border-radius: 80px 80px 140px 140px;
-  box-shadow: 0 0 40px var(--glow-red), inset 0 0 20px rgba(0, 0, 0, 0.4);
-  border: 4px solid var(--accent-red);
+  background-color: var(--shell-white);
+  border-radius: 85px 85px 145px 145px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
   overflow: hidden;
+  border: 1px solid #dddddd;
 }
 
-/* Arte de Fundo e Texturas (Estilo Takahashi / Cherry Blossom) */
+/* Elementos GrÃ¡ficos Vermelhos (Simulando a pintura Takahashi / Respingos) */
 .controller-shell::before {
   content: "";
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(230,0,18,0.15) 100%);
-  opacity: 0.8;
+  height: 55%;
+  background: linear-gradient(170deg, transparent 25%, var(--accent-red) 30%, #a00b10 100%);
+  opacity: 0.95;
   z-index: 1;
 }
 
-/* Botão Xbox (Painel Superior Central) */
+/* BotÃ£o Xbox Central Superior */
 .btn-xbox {
   position: absolute;
-  top: 40px;
+  top: 45px;
   left: 50%;
   transform: translateX(-50%);
-  width: 70px;
-  height: 70px;
-  background-color: #111;
-  border: 3px solid #fff;
+  width: 76px;
+  height: 76px;
+  background-color: #ffffff;
+  border: 3px solid var(--btn-dark);
   border-radius: 50%;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
   z-index: 10;
-  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* Analógico Esquerdo (Direção / Steer) */
+/* AnalÃ³gico Esquerdo com Aro de Brilho Vermelho */
 .joystick-left {
   position: absolute;
-  top: 130px;
-  left: 120px;
-  width: 110px;
-  height: 110px;
-  background: radial-gradient(circle, #222 30%, #111 70%);
+  top: 140px;
+  left: 140px;
+  width: 115px;
+  height: 115px;
+  background: radial-gradient(circle, #2b2b2b 40%, #111111 80%);
   border-radius: 50%;
-  border: 4px solid var(--accent-red);
-  box-shadow: 0 0 25px var(--glow-red);
+  box-shadow: 0 0 0 6px var(--accent-red), 0 0 20px var(--glow-red);
   z-index: 10;
 }
 
-/* Analógico Direito (Olhar / Look) */
+/* AnalÃ³gico Direito com Aro de Brilho Vermelho */
 .joystick-right {
   position: absolute;
-  top: 240px;
-  right: 220px;
-  width: 110px;
-  height: 110px;
-  background: radial-gradient(circle, #222 30%, #111 70%);
+  top: 250px;
+  right: 240px;
+  width: 115px;
+  height: 115px;
+  background: radial-gradient(circle, #2b2b2b 40%, #111111 80%);
   border-radius: 50%;
-  border: 4px solid var(--accent-red);
-  box-shadow: 0 0 25px var(--glow-red);
+  box-shadow: 0 0 0 6px var(--accent-red), 0 0 20px var(--glow-red);
   z-index: 10;
 }
 
-/* Direcional D-Pad (Rádio / Piscas) */
+/* Direcional D-Pad Preto */
 .d-pad {
   position: absolute;
-  top: 240px;
-  left: 230px;
-  width: 100px;
-  height: 100px;
+  top: 255px;
+  left: 255px;
+  width: 105px;
+  height: 105px;
+  background-color: var(--btn-dark);
+  border-radius: 12px;
   z-index: 10;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-.d-pad-cross {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: #1a1a1a;
-  border-radius: 15px;
-  box-shadow: inset 0 0 10px #000;
-}
-
-/* Botões de Ação (Y, X, B, A) */
+/* Bloco dos BotÃµes de AÃ§Ã£o ABXY com AnÃ©is Vermelhos */
 .action-buttons {
   position: absolute;
-  top: 110px;
-  right: 110px;
-  width: 140px;
-  height: 140px;
+  top: 125px;
+  right: 125px;
+  width: 150px;
+  height: 150px;
   z-index: 10;
 }
 
 .btn-action {
   position: absolute;
-  width: 44px;
-  height: 44px;
-  background: #111;
-  border: 2px solid var(--accent-red);
+  width: 46px;
+  height: 46px;
+  background: var(--btn-dark);
   border-radius: 50%;
-  color: var(--accent-red);
-  font-weight: bold;
-  font-size: 18px;
+  box-shadow: 0 0 0 4px var(--accent-red), 0 4px 10px rgba(0,0,0,0.4);
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 12px var(--glow-red);
-  cursor: pointer;
-  transition: all 0.2s ease;
 }
 
-.btn-action:hover {
-  background: var(--accent-red);
-  color: #fff;
-  box-shadow: 0 0 20px var(--accent-red);
-}
+.btn-y { top: 0; left: 52px; }
+.btn-x { top: 52px; left: 0; }
+.btn-b { top: 52px; right: 0; }
+.btn-a { bottom: 0; left: 52px; }
 
-.btn-y { top: 0; left: 48px; }
-.btn-x { top: 48px; left: 0; }
-.btn-b { top: 48px; right: 0; }
-.btn-a { bottom: 0; left: 48px; }
-
-/* Gatilhos e Bumpers Superiores (LT, LB, RT, RB) */
-.trigger-left, .trigger-right {
+/* Gatilhos e Bumpers (Detalhes em Vermelho na parte Superior) */
+.bumper-left, .bumper-right {
   position: absolute;
   top: 0;
-  width: 140px;
-  height: 35px;
-  background: #1a1a1a;
-  border-bottom: 3px solid var(--accent-red);
+  width: 160px;
+  height: 40px;
+  background: var(--accent-red);
   z-index: 5;
 }
-.trigger-left { left: 100px; border-radius: 0 0 0 20px; }
-.trigger-right { right: 100px; border-radius: 0 0 20px 0; }
+.bumper-left { left: 120px; border-radius: 0 0 0 25px; }
+.bumper-right { right: 120px; border-radius: 0 0 25px 0; }
